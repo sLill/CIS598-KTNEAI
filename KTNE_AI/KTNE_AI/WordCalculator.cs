@@ -35,7 +35,7 @@ namespace KTNE_AI
             {
                 return _possibilities;
             }
-            else if (audioStr == "Complete")
+            else if (audioStr == "Finished")
             {
                 Complete = true;
                 return "Okay.";
@@ -114,7 +114,7 @@ namespace KTNE_AI
                     return "What is the word in column 2, row 3?";
                 case "C":
                     return "What is the word in column 2, row 1?";
-                case "C E E ":
+                case "C E E":
                     return "What is the word in column 2, row 3?";
                 case "Blank":
                     return "What is the word in column 1, row 3?";

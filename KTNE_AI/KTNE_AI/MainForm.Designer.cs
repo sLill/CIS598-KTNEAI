@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainform));
             this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.btnBegin = new System.Windows.Forms.Button();
             this.waveViewer = new NAudio.Gui.WaveViewer();
@@ -35,7 +36,7 @@
             // 
             // rtbLog
             // 
-            this.rtbLog.BackColor = System.Drawing.SystemColors.Control;
+            this.rtbLog.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.rtbLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbLog.Location = new System.Drawing.Point(12, 130);
             this.rtbLog.Name = "rtbLog";
@@ -47,7 +48,7 @@
             // 
             // btnBegin
             // 
-            this.btnBegin.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBegin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnBegin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBegin.Location = new System.Drawing.Point(12, 326);
             this.btnBegin.Name = "btnBegin";
@@ -59,6 +60,7 @@
             // 
             // waveViewer
             // 
+            this.waveViewer.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.waveViewer.Location = new System.Drawing.Point(12, 12);
             this.waveViewer.Name = "waveViewer";
             this.waveViewer.SamplesPerPixel = 128;
@@ -72,10 +74,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(648, 361);
             this.Controls.Add(this.waveViewer);
             this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.rtbLog);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "mainform";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.ResumeLayout(false);

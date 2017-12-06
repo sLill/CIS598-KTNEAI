@@ -36,7 +36,7 @@ namespace KTNE_AI
                 return "\nReady for Simon Says.\nDoes the serial number contain a vowel?";
             }
 
-            if (audioStr == "Complete")
+            if (audioStr == "Finished")
             {
                 Complete = true;
                 return "";

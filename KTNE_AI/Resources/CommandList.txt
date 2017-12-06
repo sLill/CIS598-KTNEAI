@@ -2,6 +2,7 @@ Reset
 Complete
 Repeat
 Got it
+Finished
 Simple wires
 End
 Yes
@@ -121,3 +122,5 @@ Red
 Star
 L E D
 Light
+Black
+Wire Sequences

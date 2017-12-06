@@ -42,6 +42,12 @@ namespace KTNE_AI
                 return "\nReady for Complicated Wires.\n\nIs the last digit of the serial number even?";
             }
 
+            if (audioStr == "Finished")
+            {
+                Complete = true;
+                return "";
+            }
+
             // Poll the user for the basic information needed to proceed
             if (_twoOrMoreBatteries == null)
                 return initialResponses(audioStr);

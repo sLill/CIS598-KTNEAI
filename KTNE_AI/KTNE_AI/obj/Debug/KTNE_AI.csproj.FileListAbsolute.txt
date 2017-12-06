@@ -9,3 +9,14 @@ C:\Users\Sam\Desktop\SeniorProj\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.csproj.Generat
 C:\Users\Sam\Desktop\SeniorProj\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.exe
 C:\Users\Sam\Desktop\SeniorProj\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.pdb
 C:\Users\Sam\Desktop\SeniorProj\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.csprojResolveAssemblyReference.cache
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\bin\Debug\KTNE_AI.exe.config
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\bin\Debug\KTNE_AI.exe
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\bin\Debug\KTNE_AI.pdb
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\bin\Debug\NAudio.dll
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\bin\Debug\NAudio.xml
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.mainform.resources
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.Properties.Resources.resources
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.csproj.GenerateResource.Cache
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.exe
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.pdb
+C:\Users\Sam\Desktop\SeniorProj\CIS598-KTNEAI\KTNE_AI\KTNE_AI\obj\Debug\KTNE_AI.csprojResolveAssemblyReference.cache
