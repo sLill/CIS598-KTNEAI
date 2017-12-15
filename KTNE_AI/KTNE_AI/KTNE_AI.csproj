@@ -60,6 +60,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maze.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="MorseCode.cs" />
     <Compile Include="NeedyKnob.cs" />

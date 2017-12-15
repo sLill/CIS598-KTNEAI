@@ -33,6 +33,7 @@ namespace KTNE_AI
         private WireSequences _wireSequences;
         private Passwords _passwords;
         private NeedyKnob _needyKnob;
+        private Maze _maze;
 
         private enum State
         {
@@ -47,7 +48,8 @@ namespace KTNE_AI
             ComplicatedWires,
             WireSequences,
             Passwords,
-            NeedyKnob
+            NeedyKnob,
+            Maze
         };
 
         public mainform()
@@ -184,6 +186,11 @@ namespace KTNE_AI
                     _modState = State.NeedyKnob;
                     UpdateLog(_needyKnob.Update(mod));
                     break;
+                case "Maze":
+                    _maze = new Maze();
+                    _modState = State.Maze;
+                    UpdateLog(_maze.Update(mod));
+                    break;
                 default:
                     UpdateLog("\nI don't recognize that module.");
                     break;
@@ -288,6 +295,14 @@ namespace KTNE_AI
                 case State.NeedyKnob:
                     UpdateLog(_needyKnob.Update(e.Result.Text));
                     if (_needyKnob.Complete)
+                    {
+                        _modState = State.NoState;
+                        UpdateLog("\nReady for the next module.");
+                    }
+                    break;
+                case State.Maze:
+                    UpdateLog(_maze.Update(e.Result.Text));
+                    if (_maze.Complete)
                     {
                         _modState = State.NoState;
                         UpdateLog("\nReady for the next module.");

@@ -9,21 +9,11 @@ namespace KTNE_AI
     public class NeedyKnob
     {
         private bool _readyPrompt = false;
-        private Direction _direction;
         private List<int> _litPositions;
         private List<Tuple<string, List<int>>> _possibleOutcomes;
 
         // Signals to the main method that this module is finished
         public bool Complete { get; private set; }
-
-        private enum Direction
-        {
-            NoDirection,
-            Up,
-            Down,
-            Left,
-            Right
-        }
 
         public NeedyKnob()
         {
@@ -32,18 +22,18 @@ namespace KTNE_AI
 
         private void init()
         {
-            _direction = Direction.NoDirection;
             _litPositions = new List<int>();
 
-            _possibleOutcomes = new List<Tuple<string, List<int>>>();
-            _possibleOutcomes.Add(new Tuple<string, List<int>>("UP", new List<int> { 3,5,6,7,8,9,10,12 }));
-            _possibleOutcomes.Add(new Tuple<string, List<int>>("UP", new List<int> { 1,3,5,8,9,11,12 }));
-            _possibleOutcomes.Add(new Tuple<string, List<int>>("DOWN", new List<int> { 2,3,6,7,8,9,10,12 }));
-            _possibleOutcomes.Add(new Tuple<string, List<int>>("DOWN", new List<int> { 1,3,5,8,12 }));
-            _possibleOutcomes.Add(new Tuple<string, List<int>>("RIGHT", new List<int> { 1,3,4,5,6,7,8,9,11 }));
-            _possibleOutcomes.Add(new Tuple<string, List<int>>("RIGHT", new List<int> { 1,3,4,7,8,9,11 }));
-            _possibleOutcomes.Add(new Tuple<string, List<int>>("LEFT", new List<int> { 5,7,10,11,12 }));
-            _possibleOutcomes.Add(new Tuple<string, List<int>>("LEFT", new List<int> { 5,10,11 }));        
+            _possibleOutcomes = new List<Tuple<string, List<int>>>{
+                new Tuple<string, List<int>>("UP", new List<int> { 3,5,6,7,8,9,10,12 }),
+                new Tuple<string, List<int>>("UP", new List<int> { 1,3,5,8,9,11,12 }),
+                new Tuple<string, List<int>>("DOWN", new List<int> { 2,3,6,7,8,9,10,12 }),
+                new Tuple<string, List<int>>("DOWN", new List<int> { 1,3,5,8,12 }),
+                new Tuple<string, List<int>>("RIGHT", new List<int> { 1,3,4,5,6,7,8,9,11 }),
+                new Tuple<string, List<int>>("RIGHT", new List<int> { 1,3,4,7,8,9,11 }),
+                new Tuple<string, List<int>>("LEFT", new List<int> { 5,7,10,11,12 }),
+                new Tuple<string, List<int>>("LEFT", new List<int> { 5,10,11 })
+            };
         }
 
         public string Update(string audioStr)
@@ -52,7 +42,7 @@ namespace KTNE_AI
             if (!_readyPrompt)
             {
                 _readyPrompt = true;
-                return "\nDescribe what L E D's are lit from left to right.";
+                return "\nDescribe what L E D positions are lit from left to right.";
             }
 
             if (audioStr == "Nope" || audioStr == "No")
