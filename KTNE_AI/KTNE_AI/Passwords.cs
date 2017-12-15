@@ -50,27 +50,39 @@ namespace KTNE_AI
                 return "\nReady for Passwords. Begin by telling me each of the letters in column " + (_currColumn + 1); 
             }
 
+            // Erase the last letter added
+            if (audioStr == "Nope")
+            {
+                return eraseLastLetter();
+            }
+
+            // Begin adding letters and checking for answers
             if (_letterCount == 5 && getLetter(audioStr) != ' ')
             {
-                _letters[_currColumn][_letterCount] = getLetter(audioStr);
+                string returnString;
+
+                _letters[_currColumn].Add(getLetter(audioStr));
+                returnString = checkForAnswer(audioStr);
 
                 _letterCount = 0;
 
                 if (_currColumn != _letters.Count - 1)
                          _currColumn++;
 
-                return checkForAnswer();
+                // See if we've narrowed the possible answers to 1. If not ask for the letters in the next column
+                return returnString;
             }
             else if (getLetter(audioStr) != ' ')
             {
-                _letters[_currColumn][_letterCount] = getLetter(audioStr);
+                _letters[_currColumn].Add(getLetter(audioStr));
+                _letterCount++;
+
+                return audioStr;
             }
             else
             {
-                return "\nI didn't catch that.\nPlease repeat the previous letter."; 
+                return "I didn't catch that."; 
             }
-
-            return "";
         }
 
         private char getLetter(string letter)
@@ -134,9 +146,64 @@ namespace KTNE_AI
             }
         }
 
-        private string checkForAnswer()
+        private string checkForAnswer(string letter)
         {
-            return "";
+            // Loop through all words checking to make sure they contain atleast one of the letters in each column
+            for (int i = 0; i < _wordBank.Count; i++)
+            {
+                    bool letterFound = false;
+
+                    for (int k = 0; k < 6; k++)
+                    {
+                    if (_wordBank[i][_currColumn].ToString().ToUpper() == _letters[_currColumn][k].ToString())
+                        {
+                            // Signal that a letter is present in this column and move on to the next
+                            letterFound = true;
+                            break;
+                        }
+                    }
+
+                    // If no letter is found remove the word from the list of possible answers
+                    if (!letterFound)
+                    {
+                        _wordBank.RemoveAt(i);
+                        i--;
+                    }
+            }
+
+            if (_wordBank.Count == 0)
+            {
+                Complete = true;
+                return "\nI'm all out of possibilities.\nPerhaps there was a mistake.\nTry starting over.";
+            }
+            else if (_wordBank.Count == 1)
+            {
+                string returnString = "\nThe password is ";
+                Complete = true;
+
+                for (int i = 0; i < _wordBank[0].Length; i++)
+                    returnString += (_wordBank[0][i] + " ");
+
+                return returnString;
+            }
+            else
+                return letter + "\nReady for the letters in column " + (_currColumn + 2);
+        }
+
+        private string eraseLastLetter()
+        {
+            // Make sure there's a letter to erase before we try to get rid of it
+            if (_letters[_currColumn].Count == 0)
+                return "\nI don't have any letters to remove yet.";
+            else
+            {
+                char letterToRemove = _letters[_currColumn][_letterCount-1];
+
+                _letters[_currColumn].RemoveAt(_letterCount-1);
+                _letterCount--;
+
+                return "Removed " + letterToRemove;
+            }
         }
     }
 }
