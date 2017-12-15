@@ -150,3 +150,14 @@ Y
 Z
 Passwords
 Nope
+Needy Knob
+Up
+Down
+Left
+Right
+Seven
+Eight
+Nine
+Ten
+Eleven
+Twelve

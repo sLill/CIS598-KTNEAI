@@ -20,10 +20,10 @@ namespace KTNE_AI
 
         public Passwords()
         {
-            Init();
+            init();
         }
 
-        private void Init()
+        private void init()
         {
             _wordBank = new List<string> {"ABOUT", "AFTER", "AGAIN", "BELOW", "COULD", "EVERY", "FIRST", "FOUND", "GREAT", "HOUSE",
                 "LARGE", "LEARN", "NEVER", "OTHER", "PLACE", "PLANT", "POINT", "RIGHT", "SMALL", "SOUND", "SPELL", "STILL", "STUDY",
@@ -51,7 +51,7 @@ namespace KTNE_AI
             }
 
             // Erase the last letter added
-            if (audioStr == "Nope")
+            if (audioStr == "Nope" || audioStr == "No")
             {
                 return eraseLastLetter();
             }
