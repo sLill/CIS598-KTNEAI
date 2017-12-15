@@ -29,7 +29,7 @@ namespace KTNE_AI
             if (!_readyPrompt)
             {
                 _readyPrompt = true;
-                return "\nReady for Morse Code.\n\nBegin whenever you're ready. ";
+                return "\nReady for Morse Code.\n\nDecribe using LONGS, SHORTS, and SPACES.\n\nBegin whenever you're ready. ";
             }
 
             if (audioStr == "Space")

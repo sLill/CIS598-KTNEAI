@@ -140,7 +140,7 @@ namespace KTNE_AI
             else if (audioStr == "L E D" || audioStr == "Light")
             {
                 _currentWire.lightIsOn = true; 
-                return audioStr;
+                return ("\n" + audioStr);
             }
             else return "\nI don't understand. Could you repeat that?";
         }
